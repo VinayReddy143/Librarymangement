@@ -34,7 +34,7 @@ public class LoginServer extends HttpServlet {
 		
 		username=user.getuser(userName, password);
 		System.out.println(username.getUserid());
-		if(submit.contentEquals("LOGIN")&& username.getUserid()!=null) 
+		if(submit.equals("LOGIN")&& username.getUserid()!=null) 
 		{
 			if(username.getType().contentEquals("emp"))
 			{
