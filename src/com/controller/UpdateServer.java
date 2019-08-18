@@ -19,7 +19,7 @@ public class UpdateServer extends HttpServlet {
 	String title=request.getParameter("title");
 	String type=request.getParameter("type");
 	int stauts=update.update(title, type,userid);
-	if(stauts==3) {
+	if(stauts==4) {
 		System.out.println(stauts);
 		request.setAttribute("message","books updated");
 		request.getRequestDispatcher("UpdateUser.jsp").forward(request, response);

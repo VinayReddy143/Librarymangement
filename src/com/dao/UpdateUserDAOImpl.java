@@ -46,14 +46,21 @@ public class UpdateUserDAOImpl implements UpdateUserDAO {
 			finalStatus=finalStatus+status;
 			usernoofbooks=usernoofbooks+1;
 			int limit=3-usernoofbooks;
-			ps=con.prepareStatement("update customers set noofbooks=? where email=?");
+			ps=con.prepareStatement("update customers set noofbooks=?,books=?where email=?");
 			ps.setInt(1,usernoofbooks );
+			ps.setString(2, title);
+			ps.setString(3,userid );
 			
-			ps.setString(2,userid );
 			status=ps.executeUpdate();
 			finalStatus=finalStatus+status;
 			ps=con.prepareStatement("update customers set remains=? where email=?");
 			ps.setInt(1,limit );
+			
+			ps.setString(2,userid );
+			status=ps.executeUpdate();
+			finalStatus=finalStatus+status;
+			ps=con.prepareStatement("update customers set books=? where email=?");
+			ps.setString(1,title );
 			
 			ps.setString(2,userid );
 			status=ps.executeUpdate();
@@ -72,12 +79,18 @@ public class UpdateUserDAOImpl implements UpdateUserDAO {
 				int limit=3-usernoofbooks;
 				ps=con.prepareStatement("update Customers set noofbooks=? email=?");
 				ps.setInt(1,usernoofbooks );
-				ps.setInt(2,limit );
-				ps.setString(3,userid );
+				
+				ps.setString(2,userid );
 				status=ps.executeUpdate();
 				finalStatus=finalStatus+status;
 				ps=con.prepareStatement("update customers set remains=? where email=?");
 				ps.setInt(1,limit );
+				
+				ps.setString(2,userid );
+				status=ps.executeUpdate();
+				finalStatus=finalStatus+status;
+				ps=con.prepareStatement("update customers set books=? where email=?");
+				ps.setString(1,title );
 				
 				ps.setString(2,userid );
 				status=ps.executeUpdate();
@@ -87,7 +100,7 @@ public class UpdateUserDAOImpl implements UpdateUserDAO {
 		{
 			System.out.println(e);
 		}
-		System.out.println(status);
+		System.out.println(finalStatus);
 		
 		return finalStatus;
 	}
