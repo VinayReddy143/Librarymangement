@@ -8,14 +8,38 @@ import java.sql.SQLException;
 public class UpdateUserDAOImpl implements UpdateUserDAO {
 	 static Connection con;
      static PreparedStatement ps;
+     
 	@Override
+	public int limitcheck(String userid) {
+		int limit=0;
+		
+		try {
+			con=DatabaseUtil.getConnection();
+			ps=con.prepareStatement("select * from customers where email=?");
+			ps.setString(1, userid );
+			ResultSet rsu=ps.executeQuery();
+			while(rsu.next())
+			{
+				limit=rsu.getInt(6);
+			}
+		
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+		return limit;
+	}
 	public int update(String title, String type,String userid) {
 		int status=0;
 		int finalStatus=0;
 		int noofbooks=0;
 		int usernoofbooks=0;
+		int limit=0;
 		
 		try {
+			
+			
 			con=DatabaseUtil.getConnection();
 			ps=con.prepareStatement("select * from books where title=?");
 			ps.setString(1, title );
@@ -45,7 +69,7 @@ public class UpdateUserDAOImpl implements UpdateUserDAO {
 			status=ps.executeUpdate();
 			finalStatus=finalStatus+status;
 			usernoofbooks=usernoofbooks+1;
-			int limit=3-usernoofbooks;
+			limit=3-usernoofbooks;
 			ps=con.prepareStatement("update customers set noofbooks=?,books=?where email=?");
 			ps.setInt(1,usernoofbooks );
 			ps.setString(2, title);
@@ -76,7 +100,7 @@ public class UpdateUserDAOImpl implements UpdateUserDAO {
 				status=ps.executeUpdate();
 				finalStatus=finalStatus+status;
 				usernoofbooks=usernoofbooks-1;
-				int limit=3-usernoofbooks;
+				limit=3-usernoofbooks;
 				ps=con.prepareStatement("update Customers set noofbooks=? email=?");
 				ps.setInt(1,usernoofbooks );
 				

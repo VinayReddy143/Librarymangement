@@ -15,9 +15,13 @@ public class UpdateServer extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	UpdateUserDAO update=new UpdateUserDAOImpl();
+	
 	String userid=request.getParameter("userid");
 	String title=request.getParameter("title");
 	String type=request.getParameter("type");
+	int limit=update.limitcheck(userid);
+	if(limit>=0&&limit<=3)
+	{
 	int stauts=update.update(title, type,userid);
 	if(stauts==4) {
 		System.out.println(stauts);
@@ -28,7 +32,7 @@ public class UpdateServer extends HttpServlet {
 	{
 		request.setAttribute("message","books not updated");
 	}
-	
+	}
 	}
 
 	
