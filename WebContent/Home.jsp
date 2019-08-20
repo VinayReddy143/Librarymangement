@@ -71,12 +71,7 @@
 				
 			</div>
 			
-			<div class="nav">
-				<span><a href="about.html" target="iframe_c">ABOUT US</a></span>
-				<span><a href="contact.html" target="iframe_c">CONTACT US</a></span>
-				<span><a href="query.html" target="iframe_c">ANY QUERIES</a></span>
-				
-			</div>
+			
 		</div>
 		<div>
 			<div class="aside">

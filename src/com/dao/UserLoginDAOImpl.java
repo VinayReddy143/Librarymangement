@@ -15,7 +15,7 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 	public UserLogin getuser(String username, String password) {
 		try {
 			con=DatabaseUtil.getConnection();
-			ps=con.prepareStatement("select * from Customers where email=? and pass=?");
+			ps=con.prepareStatement("select * from Customers where email like ? and pass like ?");
 		
 			ps.setString(1, username);
 			ps.setString(2, password);
@@ -23,10 +23,22 @@ public class UserLoginDAOImpl implements UserLoginDAO {
 			while(rs.next())
 			{
 				System.out.println(true);
+				
 			
-				us.setUserid(rs.getString(1));
-				us.setPassword(rs.getString(2));
+				us.setUserid(rs.getString(2));
+				us.setPassword(rs.getString(3));
 				us.setType(rs.getString(7));
+				us.setName(rs.getString(1));
+				if(username.equals(us.getUserid())&& password.equals(us.getPassword()))
+				{
+					System.out.println("everything is fine");
+				}
+				else {
+					us.setUserid(null);
+					us.setPassword(null);
+					us.setName(null);
+					us.setType(null);
+				}
 			}
 		}catch(Exception e)
 		{
