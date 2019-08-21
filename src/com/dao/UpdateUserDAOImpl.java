@@ -116,7 +116,7 @@ public class UpdateUserDAOImpl implements UpdateUserDAO {
 				status=ps.executeUpdate();
 				finalStatus=finalStatus+status;
 				ps=con.prepareStatement("update customers set books=? where email=?");
-				ps.setString(1,title );
+				ps.setString(1,null );
 				
 				ps.setString(2,userid );
 				status=ps.executeUpdate();

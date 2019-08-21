@@ -24,7 +24,7 @@ public class UserRegistrationDAOImpl implements UserRegistrationDAO {
 			ps.setInt(6, 3);
 			ps.setString(7, "user");
 			ps.setString(8, null);
-			if(pass.contentEquals(repass)) {
+			if(pass.equals(repass)) {
 			status=ps.executeUpdate();
 			System.out.println(name);
 			System.out.println(status);

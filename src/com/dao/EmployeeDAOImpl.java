@@ -23,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			ps.setInt(6, 3);
 			ps.setString(7, "emp");
 			ps.setString(8, null);
-			if(pass.contentEquals(repass)) {
+			if(pass.equals(repass)) {
 			status=ps.executeUpdate();
 			System.out.println(name);
 			System.out.println(status);

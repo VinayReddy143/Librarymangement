@@ -24,7 +24,7 @@ public class UpdateServer extends HttpServlet {
 	
 
 	int limit=update.limitcheck(userid);
-	if(limit>=0&&limit<=3)
+	if(limit>0&&limit<=3)
 	{
 	int stauts=update.update(title, type,userid);
 	if(stauts==4) {
