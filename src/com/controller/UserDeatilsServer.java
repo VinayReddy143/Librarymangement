@@ -27,7 +27,7 @@ public class UserDeatilsServer extends HttpServlet {
 				PrintWriter out =response.getWriter();
 				String userid=request.getParameter("username");
 				
-				out.print("<table><tr><th>User Name</th><th>email</th><th>no of books</th><th>limit</th></tr>");
+				out.print("<table border=10px><tr><th>User Name</th><th>email</th><th>no of books</th><th>limit</th></tr>");
 				userDetailsList=userDetails.search(userid);
 				for(int i=0;i<userDetailsList.size();i++)
 				{

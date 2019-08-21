@@ -28,7 +28,7 @@ public class SearchBookServer extends HttpServlet {
 		PrintWriter out =response.getWriter();
 		String title=request.getParameter("title");
 		String author =request.getParameter("author");
-		out.print("<table><tr><th>Title</th><th>Author</th><th>Description</th><th>No of Books</th></tr>");
+		out.print("<table border=10px><tr><th>Title</th><th>Author</th><th>Description</th><th>No of Books</th></tr>");
 		searchBookList=search.search(title, author);
 		for(int i=0;i<searchBookList.size();i++)
 		{
