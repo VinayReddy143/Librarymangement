@@ -60,20 +60,13 @@
 			<div class='logo'>
 				<span class="logo-img"><img src="C:\Users\Admin\Downloads\vinay\Libraryicon.png" alt="logo" height="140px" class="logo-image"></span><!--
 				--><span class="logo-text">LIBRARY MANAGEMENT SYSTEM
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<%String message = (String)request.getAttribute("message"); %>
 <%if(message!=null) {%>
-<%=message %><%} %>
+<%=message %><%} %>&nbsp;&nbsp;
+<a href="Login.jsp">Logout</a>
 </span>
-			</div>
-			<div class="nav">
-				<span><a href="about.html" target="iframe_c">ABOUT US</a></span>
-				<span><a href="contact.html" target="iframe_c">CONTACT US</a></span>
-				<span><a href="query.html" target="iframe_c">ANY QUERIES</a></span>
-				
-				
-			</div>
-		</div>
+			
 		<div>
 			<div class="aside">
 				

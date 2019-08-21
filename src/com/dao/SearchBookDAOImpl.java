@@ -21,6 +21,7 @@ public class SearchBookDAOImpl implements SearchBookDAO {
 			ps.setString(1, title);
 			ps.setString(2, author);
 			ResultSet rs=ps.executeQuery();
+			
 			while(rs.next())
 			{
 				

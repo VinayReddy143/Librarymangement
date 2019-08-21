@@ -61,10 +61,12 @@
 			<div class='logo'>
 				<span class="logo-img"><img src="Libraryicon.png" alt="logo" height="140px" class="logo-image"></span><!--
 				--><span class="logo-text">LIBRARY MANAGEMENT SYSTEM
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;
 				<%String message = (String)request.getAttribute("message"); %>
 <%if(message!=null) {%>
 <%=message %><%} %>
+&nbsp;&nbsp;
+<a href="Login.jsp">Logout</a>
 				
 				
 				</span>
@@ -93,6 +95,7 @@
 				<div class="aside-div">
 					<a href="EmployeeCreation.jsp" target="iframe_c">Employee Creation</a>
 				</div>
+				
 				
 			</div><!--
 			--><div class="iframe">

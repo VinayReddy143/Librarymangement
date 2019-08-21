@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +21,8 @@ public class UpdateServer extends HttpServlet {
 	String userid=request.getParameter("userid");
 	String title=request.getParameter("title");
 	String type=request.getParameter("type");
+	
+
 	int limit=update.limitcheck(userid);
 	if(limit>=0&&limit<=3)
 	{
@@ -31,6 +35,7 @@ public class UpdateServer extends HttpServlet {
 	else
 	{
 		request.setAttribute("message","books not updated");
+		request.getRequestDispatcher("UpdateUser.jsp").forward(request, response);
 	}
 	}
 	}

@@ -22,13 +22,13 @@ public class EmployeeServer extends HttpServlet {
 		String email=request.getParameter("email");
 		String pass=request.getParameter("pass");
 		String repass=request.getParameter("repass");
-		String card=request.getParameter("card");
 		String register=request.getParameter("Register");
 		int status=emp.getuser(name, email, pass, repass);
 		System.out.println(name);
 		if(status==1) {
 			System.out.println(status);
 			request.setAttribute("message","user created");
+			request.getRequestDispatcher("EmployeeCreation.jsp").forward(request, response);
 			
 	}
 

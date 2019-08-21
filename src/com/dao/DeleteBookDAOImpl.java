@@ -8,7 +8,7 @@ public class DeleteBookDAOImpl implements DeleteBookDAO {
 	static Connection con;
     static PreparedStatement ps;
 	@Override
-	public int deleteBook(String title, String author, String description, int noofbooks) {
+	public int deleteBook(String title) {
 		int status=0;
 		try {
 			con=DatabaseUtil.getConnection();

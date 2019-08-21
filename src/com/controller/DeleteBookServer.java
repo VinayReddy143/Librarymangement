@@ -17,10 +17,8 @@ public class DeleteBookServer extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DeleteBookDAO delete=new DeleteBookDAOImpl();
 		String title=request.getParameter("title");
-		String author=request.getParameter("author");
-		String description=request.getParameter("description");
-		int noofbooks=Integer.parseInt(request.getParameter("noofbooks"));
-		int status=delete.deleteBook(title, author, description, noofbooks);
+		
+		int status=delete.deleteBook(title);
 		if(status==1) {
 			System.out.println(status);
 			request.setAttribute("message","books deleted");
@@ -29,6 +27,7 @@ public class DeleteBookServer extends HttpServlet {
 		else
 		{
 			request.setAttribute("message","books not deleted");
+			request.getRequestDispatcher("DeleteBook.jsp").forward(request, response);
 		}
 		
 	}

@@ -15,7 +15,7 @@ public class UserRegistrationDAOImpl implements UserRegistrationDAO {
 		int status=0;
 		try {
 			con=DatabaseUtil.getConnection();
-			ps=con.prepareStatement("INSERT INTO Customers VALUES(?,?,?,?,?,?,?)");
+			ps=con.prepareStatement("INSERT INTO Customers VALUES(?,?,?,?,?,?,?,?)");
 			ps.setString(1, name );
 			ps.setString(2, email);
 			ps.setString(3, pass);
@@ -23,6 +23,7 @@ public class UserRegistrationDAOImpl implements UserRegistrationDAO {
 			ps.setInt(5, 0);
 			ps.setInt(6, 3);
 			ps.setString(7, "user");
+			ps.setString(8, null);
 			if(pass.contentEquals(repass)) {
 			status=ps.executeUpdate();
 			System.out.println(name);

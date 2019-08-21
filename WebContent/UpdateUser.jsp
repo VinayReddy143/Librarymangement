@@ -26,10 +26,12 @@
 <td>
 <input  type = "text" placeholder="Title of the book" name = "title"><br><br><br>
 </td></tr>
+<tr>
 
 <tr>
 <td>
-<input type = "text" placeholder="Type"  name ="type"><br></br>
+<input type="radio" name="type" value="borrow"> Borrow<br>
+<input type="radio" name="type" value="return"> Return<br><br></br>
 </td></tr>
 
 

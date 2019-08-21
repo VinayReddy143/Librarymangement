@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="Style1css.css">
 </head>
 <body>
-<div class="deletebox">
+<div class="Searchbox">
 <h1>Deletion</h1>
 
 <form action="DeleteBookServer" method="get">
@@ -22,20 +22,6 @@
 <td>
 <input  type = "text" placeholder="Title of the book" name = "title"><br></br>
 </td></tr>
-<tr>
-<td>
-<input type = "text" placeholder="Author" name ="author"><br></br>
-</td></tr>
-<tr>
-<td>
-<input type = "text" placeholder="Description" name ="description"><br></br>
-</td></tr>
-<tr>
-<td>
-<input type = "text" placeholder="Number of books" name ="noofbooks"><br></br>
-</td></tr>
-
-
 <tr>
 <td><input type ="submit" name="Delete" value ="Delete">
 </table></form>
