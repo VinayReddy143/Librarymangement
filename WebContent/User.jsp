@@ -58,7 +58,7 @@
 	<%response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 		<div>
 			<div class='logo'>
-				<span class="logo-img"><img src="C:\Users\Admin\Downloads\vinay\Libraryicon.png" alt="logo" height="140px" class="logo-image"></span><!--
+				<span class="logo-img"><img src="Libraryicon.png" alt="logo" height="140px" class="logo-image"></span><!--
 				--><span class="logo-text">LIBRARY MANAGEMENT SYSTEM
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<%String message = (String)request.getAttribute("message"); %>
